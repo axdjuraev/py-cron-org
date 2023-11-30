@@ -25,6 +25,10 @@ class JobsApi(BaseApi):
         res = self._safe_response(self._proxy_request.get(url, headers=self._headers))
         return JobsDetails(**res.json())
 
+    def delete(self, jobId: int):
+        url = f"{self._url}/{jobId}"
+        self._safe_response(self._proxy_request.delete(url, headers=self._headers))
+
     def create(self, jobDetail: JobDetailCreate):
         self._safe_response(
             self._proxy_request.put(
