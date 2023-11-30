@@ -1,0 +1,57 @@
+{
+    "jobDetails": {
+        "jobId": 12345,
+        "enabled": true,
+        "title": "Example Job",
+        "saveResponses": false,
+        "url": "https:\/\/example.com\/",
+        "lastStatus": 0,
+        "lastDuration": 0,
+        "lastExecution": 0,
+        "nextExecution": 1640189160,
+        "auth": {
+            "enable": false,
+            "user": "",
+            "password": ""
+        },
+        "notification": {
+            "onFailure": false,
+            "onSuccess": false,
+            "onDisable": false
+        },
+        "extendedData": {
+            "headers": {
+                "X-Foo": "Bar"
+            },
+            "body": "Hello World!"
+        },
+        "type": 0,
+        "requestTimeout": 300,
+        "redirectSuccess": false,
+        "folderId": 0,
+        "schedule": {
+            "timezone": "Europe/Berlin",
+            "expiresAt": 0,
+            "hours": [
+                -1
+            ],
+            "mdays": [
+                -1
+            ],
+            "minutes": [
+                0,
+                15,
+                30,
+                45
+            ],
+            "months": [
+                -1
+            ],
+            "wdays": [
+                -1
+            ]
+        },
+        "requestMethod": 0
+    }
+}
+

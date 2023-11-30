@@ -1,3 +1,4 @@
+import requests
 from abc import ABC
 from typing import Optional
 
@@ -17,6 +18,7 @@ class BaseApi(ABC):
         base_host: Optional[str] = None, 
         base_path: Optional[str] = None, 
         headers: Optional[dict] = None,
+        proxy_request = None,
     ) -> None:
         self._token = token
         self._headers = headers or self._DEFAULT_HEADERS
@@ -24,4 +26,5 @@ class BaseApi(ABC):
         self._base_host = base_host or self._DEFAULT_BASE_HOST
         self._base_path = base_path or self._DEFAULT_BASE_PATH
         self._url = f"{self._base_host}/{self._base_path}"
+        self._proxy_request = proxy_request or requests
 
