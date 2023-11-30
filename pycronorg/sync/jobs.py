@@ -4,7 +4,6 @@ from pycronorg.schemas import (
     JobDetailUpdate,
     JobHistory,
     JobsDetails, 
-    JobDetail,
     JobDetailCreate,
 )
 from .base import BaseApi
@@ -12,7 +11,7 @@ from .base import BaseApi
 
 class JobsApi(BaseApi):
     _DEFAULT_BASE_PATH = "jobs"
-    Schema = JobDetail 
+    Schema = JobDetailCreate 
 
     def __init__(self, token, *, base_path=None, headers=None) -> None:
         super().__init__(token, base_path=base_path, headers=headers)
