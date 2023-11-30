@@ -5,6 +5,7 @@ from pycronorg.schemas import (
     JobHistory,
     JobsDetails, 
     JobDetailCreate,
+    Scheldule,
 )
 from .base import BaseApi
 
@@ -12,6 +13,7 @@ from .base import BaseApi
 class JobsApi(BaseApi):
     _DEFAULT_BASE_PATH = "jobs"
     Schema = JobDetailCreate 
+    SchelduleSchema = Scheldule
 
     def __init__(self, token, *, base_path=None, headers=None) -> None:
         super().__init__(token, base_path=base_path, headers=headers)
