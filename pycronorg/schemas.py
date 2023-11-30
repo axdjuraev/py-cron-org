@@ -89,7 +89,7 @@ class ItemStats(BaseModel):
     total: int
 
 
-class ItemHistory(BaseModel):
+class JobHistoryItem(BaseModel):
     jobLogId: int
     jobId: int
     identifier: str
@@ -106,7 +106,11 @@ class ItemHistory(BaseModel):
     stats: ItemStats
 
 
-class History(BaseModel):
-    history: list[ItemHistory]
+class JobHistory(BaseModel):
+    history: list[JobHistoryItem]
     predictions: list[int]
+
+
+class HistoryItemRetrive(BaseModel):
+    jobHistoryDetails: JobHistoryItem
 
