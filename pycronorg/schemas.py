@@ -29,7 +29,7 @@ class Scheldule(BaseModel):
     wdays: list[int] = Field(default_factory=lambda: [-1])
 
 
-class JodDetail(BaseModel):
+class JobDetail(BaseModel):
     jobId: int
     enabled: bool = True
     title: str = "Example Job"
@@ -51,7 +51,31 @@ class JodDetail(BaseModel):
 
 
 class JobsDetails(BaseModel):
-    jobs: list[JodDetail]
+    jobs: list[JobDetail]
     someFailed: bool = False
 
+
+class JobDetailCreate(JobDetail):
+    jobId: Optional[int] = None
+
+
+class JobDetailUpdate(JobDetail):
+    jobId: int
+    enabled: Optional[bool] = None
+    title: Optional[str] = None
+    url: Optional[str] = None
+    saveResponses: Optional[bool] = None
+    lastStatus: Optional[int] = None
+    lastDuration: Optional[int] = None
+    lastExecution: Optional[int] = None
+    nextExecution: Optional[int] = None
+    type: Optional[int] = None
+    requestTimeout: Optional[int] = None
+    redirectSuccess: Optional[bool] = None
+    folderId: Optional[int] = None
+    scheldule: Optional[Scheldule] = None
+    auth: Optional[Auth] = None
+    notification: Optional[Notification] = None
+    extendedData: Optional[ExtendedData] = None
+    requestMethod: Optional[int] = None
 
