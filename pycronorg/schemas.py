@@ -79,3 +79,34 @@ class JobDetailUpdate(JobDetail):
     extendedData: Optional[ExtendedData] = None
     requestMethod: Optional[int] = None
 
+
+class ItemStats(BaseModel):
+    nameLookup: int
+    connect: int
+    appConnect: int
+    preTransfer: int
+    startTransfer: int
+    total: int
+
+
+class ItemHistory(BaseModel):
+    jobLogId: int
+    jobId: int
+    identifier: str
+    date: int
+    datePlanned: int
+    jitter: int
+    url: str
+    duration: int
+    status: int
+    statusText: str
+    httpStatus: int
+    headers: Optional[dict] = None
+    body: Optional[str] = None
+    stats: ItemStats
+
+
+class History(BaseModel):
+    history: list[ItemHistory]
+    predictions: list[int]
+
