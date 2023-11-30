@@ -1,6 +1,6 @@
 from typing import Optional
 from pycronorg.schemas import (
-    HistoryItemRetrive,
+    HistoryItemRetrieve,
     JobDetailUpdate,
     JobHistory,
     JobsDetails, 
@@ -58,5 +58,5 @@ class JobsApi(BaseApi):
     def retrive_history_item(self, jobId, identifier):
         url = f"{self._url}/{jobId}/history/{identifier}"
         res = self._safe_response(self._proxy_request.get(url, headers=self._headers))
-        return HistoryItemRetrive(**res.json())
+        return HistoryItemRetrieve(**res.json())
 

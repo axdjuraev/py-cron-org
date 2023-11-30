@@ -111,6 +111,6 @@ class JobHistory(BaseModel):
     predictions: list[int]
 
 
-class HistoryItemRetrive(BaseModel):
+class HistoryItemRetrieve(BaseModel):
     jobHistoryDetails: JobHistoryItem
 
