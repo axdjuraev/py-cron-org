@@ -14,6 +14,7 @@ from .base import BaseApi
 class JobsApi(BaseApi):
     _DEFAULT_BASE_PATH = "jobs"
     Schema = JobDetailCreate 
+    SchemaUpdate = JobDetailUpdate
     SchelduleSchema = Scheldule
 
     def __init__(self, token, *, base_path=None, headers=None) -> None:
@@ -56,7 +57,9 @@ class JobsApi(BaseApi):
             self._proxy_request.patch(
                 url, 
                 headers=self._headers, 
-                json=jobDetail.dict(exclude_unset=True),
+                json={
+                    'job': jobDetail.dict(exclude_unset=True),
+                }
             )
         )
 
