@@ -1,6 +1,7 @@
 from typing import Optional
 from pycronorg.schemas import (
     HistoryItemRetrieve,
+    JobCreationResponse,
     JobDetailUpdate,
     JobHistory,
     JobsDetails, 
@@ -47,6 +48,7 @@ class JobsApi(BaseApi):
                 }
             )
         )
+        return JobCreationResponse(**res.json())
 
     def update(self, jobDetail: JobDetailUpdate):
         url = f"{self._url}/{jobDetail.jobId}"
