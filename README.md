@@ -62,7 +62,7 @@ pip3 install pycronorg
 ```
 
 ## Contributing
-We welcome contributions from the developer community to improve the Wallex SDK. If you are interested in contributing to the Wallex SDK, please follow the steps below:
+We welcome contributions from the developer community to improve the pycronorg. If you are interested in contributing to the pycronorg, please follow the steps below:
 
 1. Fork the repository on GitHub.
 2. Create a new branch for your feature or bug fix.
@@ -71,5 +71,5 @@ We welcome contributions from the developer community to improve the Wallex SDK.
 5. Submit a pull request with your changes.
 
 ## License
-The Wallex SDK is licensed under the [MIT License](LICENSE).
+The pycronorg is licensed under the [MIT License](LICENSE).
 
