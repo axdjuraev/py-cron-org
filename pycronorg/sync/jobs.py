@@ -20,7 +20,7 @@ class JobsApi(BaseApi):
         super().__init__(token, base_path=base_path, headers=headers)
         self._base_path = f"{base_path}/jobs"
 
-    def all(self) -> Optional[JobsDetails]:
+    def all(self) -> JobsDetails:
         res = self._safe_response(self._proxy_request.get(self._url, headers=self._headers))
         return JobsDetails(**res.json())
     
