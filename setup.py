@@ -8,7 +8,7 @@ DESCIPTION = "a simple cron-job.org sdk"
 with open("requirements.txt", "r") as requirements_file:
     REQUIREMENTS = requirements_file.readlines()
 
-with open("README", "r") as requirements_file:
+with open("README.md", "r") as requirements_file:
     README = requirements_file.read()
 
 setup(
