@@ -3,6 +3,7 @@ from pycronorg.schemas import (
     HistoryItemRetrieve,
     JobCreationResponse,
     JobDetailUpdate,
+    JobDetailsResponse,
     JobHistory,
     JobsDetails, 
     JobDetailCreate,
@@ -28,7 +29,7 @@ class JobsApi(BaseApi):
     def get(self, jobId: int):
         url = f"{self._url}/{jobId}"
         res = self._safe_response(self._proxy_request.get(url, headers=self._headers))
-        return JobsDetails(**res.json())
+        return JobDetailsResponse(**res.json())
 
     def delete(self, jobId: int):
         url = f"{self._url}/{jobId}"
