@@ -17,20 +17,24 @@ pip3 install pycronorg
 >>> from dotenv import load_dotenv
 >>> from pycronorg.sync import JobsApi
 >>> 
->>> 
+>>>  
+>>> assert load_dotenv()  
 >>> token = os.environ['CRON_ORG_TOKEN']
 >>> api = JobsApi(token)
->>> api.create(
->>>     api.Schema(
->>>         title='hi, cron-job.org',
->>>         url='http://example.com',
->>>         scheldule=api.SchelduleSchema(
->>>             hours=[12],
->>>             minutes=[0],
->>>         ),
->>>     )
->>> )
+>>> assert api.create(
+...      api.Schema(
+...         title='hi, cron-job.org',
+...         url='http://example.com',
+...         scheldule=api.SchelduleSchema(
+...             hours=[12],
+...             minutes=[0],
+...         ),
+...     )
+... )
+... 
 >>> 
+>>> 
+
 ```
 
 ## Contributing
