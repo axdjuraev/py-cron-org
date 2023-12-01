@@ -21,7 +21,9 @@ pip3 install pycronorg
 >>> assert load_dotenv()  
 >>> token = os.environ['CRON_ORG_TOKEN']
 >>> api = JobsApi(token)
->>> assert api.create(
+
+#-------------------------------------create-------------------------------------
+>>> job = api.create(
 ...      api.Schema(
 ...         title='hi, cron-job.org',
 ...         url='http://example.com',
@@ -31,7 +33,29 @@ pip3 install pycronorg
 ...         ),
 ...     )
 ... )
-... 
+
+#------------------------------------get-job-------------------------------------
+>>> assert api.get(job.jobId)
+
+#-------------------------------------update-------------------------------------
+>>> api.update(
+...     api.SchemaUpdate(
+...         jobId=job.jobId,
+...         scheldule=api.SchelduleSchema(
+...             hours=[13],
+...             minutes=[0],
+...         )
+...     )
+... )
+
+#--------------------------------retrieve-history--------------------------------
+>>> history = api.retrive_history(job.jobId)
+
+#------------------------------------get-all-------------------------------------
+>>> jobs = api.all()
+
+#-------------------------------------delete-------------------------------------
+>>> api.delete(job.jobId)
 >>> 
 >>> 
 
