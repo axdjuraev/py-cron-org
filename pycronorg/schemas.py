@@ -57,6 +57,7 @@ class JobsDetails(BaseModel):
 
 class JobDetailCreate(JobDetail):
     jobId: Optional[int] = None
+    enabled: bool = True
 
 
 class JobDetailUpdate(JobDetail):
