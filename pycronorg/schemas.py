@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 class Auth(BaseModel):
     enable: bool = False
     user: str = ""
-    password = ""
+    password: str = ""
 
 
 class Notification(BaseModel):
@@ -20,7 +20,7 @@ class ExtendedData(BaseModel):
 
 
 class Scheldule(BaseModel):
-    timezone = "Europe/Berlin"
+    timezone: str = "Europe/Berlin"
     expiresAt: int = 0  
     hours: list[int] = Field(default_factory=lambda: [-1])
     mdays: list[int] = Field(default_factory=lambda: [-1])
