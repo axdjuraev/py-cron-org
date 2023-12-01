@@ -18,6 +18,7 @@ setup(
     author_email="<axdjuraev@gmail.com>",
     description=DESCIPTION,
     long_description=README,
+    long_description_content_type='text/markdown',
     packages=find_packages(),
     install_requires=REQUIREMENTS,
 )
