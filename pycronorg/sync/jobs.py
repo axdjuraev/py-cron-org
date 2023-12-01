@@ -33,11 +33,18 @@ class JobsApi(BaseApi):
         self._safe_response(self._proxy_request.delete(url, headers=self._headers))
 
     def create(self, jobDetail: JobDetailCreate):
-        self._safe_response(
+        jobData = jobDetail.dict(exclude_unset=True)
+
+        if not 'enabled' in jobData:
+            jobData['enabled'] = True
+
+        res = self._safe_response(
             self._proxy_request.put(
                 self._url, 
                 headers=self._headers, 
-                json=jobDetail.dict(),
+                json={
+                    'job': jobData,
+                }
             )
         )
 
