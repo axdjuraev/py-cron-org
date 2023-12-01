@@ -115,3 +115,7 @@ class JobHistory(BaseModel):
 class HistoryItemRetrieve(BaseModel):
     jobHistoryDetails: JobHistoryItem
 
+
+class JobCreationResponse(BaseModel):
+    jobId: int
+
