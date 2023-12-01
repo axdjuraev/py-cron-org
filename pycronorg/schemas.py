@@ -35,15 +35,15 @@ class JobDetail(BaseModel):
     title: str = "Example Job"
     url: str = "https://example.com/"
     saveResponses: bool = False
-    lastStatus: int = 0
-    lastDuration: int = 0
-    lastExecution: int = 0
-    nextExecution: int = 0
+    lastStatus: Optional[int] = 0
+    lastDuration: Optional[int] = 0
+    lastExecution: Optional[int] = 0
+    nextExecution: Optional[int] = 0
     type: int = 0
     requestTimeout: int = 300
     redirectSuccess: bool = False
     folderId: int = 0
-    scheldule: Scheldule
+    scheldule: Optional[Scheldule] = None
     auth: Optional[Auth] = None
     notification: Optional[Notification] = None
     extendedData: Optional[ExtendedData] = None
